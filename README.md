@@ -1,17 +1,26 @@
 # Assignment 3. Maze Escape
 
-Student ID: [Write Your ID]
+Student ID: 251071
 Name: Нуразиз Шынарбек
-Group: [Write Your Group]
-Maze size (rows x columns): [Write your size, e.g. 5x5]
+Group: SE-2536
 
-This file is the report. Fill it in as you go. How to start: `START_HERE.md`. The task: `docs/Assignment3.pdf`.
 
 ## Program output
 
-The 13 lines your program prints on your data (`java -cp out Main`):
+Broken: 98
+Kept: 80
+Last broken wall: 135
+MST cost: 28695
+Heaviest broken wall: 798
+Path length: 24
+DFS visited: 81
+Dead ends: 26
+Zones: 99
+Largest zone: 1
+Is DAG: 1
+Flow stages: 16
+Fastest route cost: 34
 
-[PASTE THE 13 LINES FROM YOUR TERMINAL HERE AFTER RUNNING: java -cp out Main]
 
 My maze:
 
@@ -51,9 +60,9 @@ Milliseconds, 5 runs each, from `java -cp out Bench`.
 
 | maze | Kruskal | Prim |
 |---|---|---|
-| 100 x 100 | [RUN BENCH AND PUT NUMBER HERE] | [RUN BENCH AND PUT NUMBER HERE] |
-| 300 x 300 | [RUN BENCH AND PUT NUMBER HERE] | [RUN BENCH AND PUT NUMBER HERE] |
-| 1000 x 1000 | [RUN BENCH AND PUT NUMBER HERE] | [RUN BENCH AND PUT NUMBER HERE] |
+| 100 x 100 | 47 21 32 32 28  avg 32 | 71 39 15 10 8  avg 29|
+| 300 x 300 | 262 229 129 130 63  avg 163| 218 163 157 106 157  avg 160 |
+| 1000 x 1000 |  2020 1825 1910 1783 1809  avg 1869| 2157 2358 2384 2075 2186  avg 2232 |
 
 What do the numbers say about how the time grows? Two or three sentences.
 Kruskal's algorithm execution time grows proportionally to $O(W \log W)$ due to sorting the edges, while Prim's grows as $O(W \log N)$ utilizing a PriorityQueue. The timing data confirms these complexities, scaling smoothly as the maze sizes increase exponentially.
@@ -71,10 +80,4 @@ n is the number of cells, m the number of walls (or slides). Fill in every algor
 | Kosaraju | $O(n + m)$ | $O(n + m)$ | Two-pass iterative DFS |
 | Route in the zone graph | $O(K^2 + m)$ | $O(K^2 + m)$ | DP over $K$ topologically ordered zones |
 
-## Before you submit
 
-- data/walls.txt, data/slides.txt and output/maze.png are in the repository.
-- `java tools/Check.java` shows all examples right.
-- This README is filled in, the program output and the section AI use included.
-- The work is pushed to main (at least one commit per mission) and the repository is public.
-- The link is attached in Moodle.
